@@ -80,7 +80,7 @@ int show_menu_window(int menu_h, int menu_w, int menu_y, int menu_x){
   set_menu_win(main_menu, menu_win);
   set_menu_sub(main_menu, menu_subwin);
   set_menu_mark(main_menu, "* ");
-  box(menu_win, '*', '*');
+  box(menu_win, 0, 0);
   wrefresh(menu_win);
   cbreak();
   post_menu(main_menu);
@@ -165,7 +165,7 @@ int show_error_window(int code, int err_h, int err_w, int err_y, int err_x){
   set_menu_win(error_menu, error_win);
   set_menu_sub(error_menu, error_subwin);
   set_menu_mark(error_menu, "* ");
-  box(error_win, '*', '*');
+  box(error_win, 0, 0);
   wrefresh(error_win);
   cbreak();
   post_menu(error_menu);
@@ -245,7 +245,7 @@ int show_open_window(int open_h, int open_w, int open_y, int open_x){
   set_menu_win(open_menu, open_win);
   set_menu_sub(open_menu, open_subwin);
   set_menu_mark(open_menu, "* ");
-  box(open_win, '*', '*');
+  box(open_win, 0, 0);
   wrefresh(open_win);
   cbreak();
   post_menu(open_menu);
@@ -320,7 +320,7 @@ int show_save_window(int save_h, int save_w, int save_y, int save_x){
   set_menu_sub(save_menu, save_subwin);
   set_menu_mark(save_menu, "* ");
   mvwprintw(save_win, 0, 0,"Do you wish to save the current text?");
-  box(save_win, '*', '*');
+  box(save_win, 0, 0);
   wrefresh(save_win);
   cbreak();
   post_menu(save_menu);

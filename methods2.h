@@ -92,7 +92,7 @@ void run_editor(const char *fileptr){
   mvwprintw(term_win, 0, (term_w/2)-8, "CSCI 1730 Editor");
   mvwprintw(term_win, (term_h-1), 0, filename.c_str());
 
-  box(edit_win, '*', '*');
+  box(edit_win, 0, 0);
   string text = load_file(filename);
   data_to_screen(text, edit_win, edit_h, edit_w);
   wrefresh(term_win);
@@ -115,7 +115,7 @@ void run_editor(const char *fileptr){
     //wmove(edit_win,ey, ex);
     //file_to_screen("", edit_win, edit_h, edit_w); //maybe
     wclear(edit_win);
-    box(edit_win, '*', '*');
+    box(edit_win, 0, 0);
     refresh();
     wrefresh(term_win);
     touchwin(term_win);
@@ -215,7 +215,7 @@ string add_char(WINDOW * win, int& x, int& y, int &ux, int &uy, int ch, string s
   }
   **/
 
-  if(ch == KEY_BACKSPACE){
+  if(ch == KEY_BACKSPACE|| ch == 127){
     if(s.size() > 0){
       data = remove_char(s);
       if(x == 2 && y > 2){
